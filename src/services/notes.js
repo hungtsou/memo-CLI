@@ -85,3 +85,15 @@ export const deleteNote = async id => {
   await saveDB(db)
   return deletedNote
 }
+
+/**
+ * Find notes by content
+ * @param {string} content - The content to search for
+ * @returns {Promise<Array>} Array of notes that match the content
+ */
+export const findNotesByContent = async content => {
+  const db = await getDB()
+  return db.notes.filter(note =>
+    note.content.includes(content)
+  )
+}
