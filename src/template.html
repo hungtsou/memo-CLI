@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Memo</title>
+  </head>
+  <style type="text/css">
+    :root {
+      color-scheme: dark;
+      --bg: #101117;
+      --paper: #181c22;
+      --ink: #eaecef;
+      --muted: #7a869a;
+      --accent: #356aff;
+      --shadow: rgba(0, 0, 0, 0.35);
+      --border: rgba(66, 74, 89, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 48px 24px 72px;
+      font-family:
+        'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    h1 {
+      margin: 0 auto 24px;
+      max-width: 960px;
+      font-size: 36px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .note {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin: 16px auto;
+      max-width: 960px;
+      box-shadow: 0 12px 30px var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .note::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        transparent
+      );
+    }
+
+    .note h2 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .note p {
+      margin: 0 0 12px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .tags {
+      display: inline-flex;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .tags span {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(211, 180, 123, 0.2);
+      border: 1px solid rgba(211, 180, 123, 0.35);
+    }
+  </style>
+  <body>
+    <h1>Memo</h1>
+    {{ notes }}
+  </body>
+</html>

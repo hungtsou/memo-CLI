@@ -1,6 +1,7 @@
 # Cursor Rules
 
 ## Commit Messages
+
 - Always use conventional commit format when creating commits
 - Format: `<type>(<scope>): <subject>`
 - Types: feat, fix, docs, style, refactor, test, chore
@@ -11,6 +12,7 @@
   - `refactor: simplify note storage logic`
 
 ## Code Formatting
+
 - Always run prettier after generating or modifying code
 - Use the project's format script: `npm run format`
 - Ensure all code follows the project's prettier configuration before committing

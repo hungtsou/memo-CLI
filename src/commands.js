@@ -9,6 +9,8 @@ import {
   deleteNote
 } from './services/notes.js'
 
+const {startServer} = await import('./server.js')
+
 yargs(hideBin(process.argv))
   .command(
     'new <note>',
@@ -105,6 +107,19 @@ yargs(hideBin(process.argv))
     async argv => {
       const notes = await findNotesByContent(argv.content)
       console.log(notes)
+    }
+  )
+  .command(
+    'web <port>',
+    'start the web server',
+    yargs => {
+      return yargs.positional('port', {
+        describe: 'The port to start the server on',
+        type: 'number'
+      })
+    },
+    async argv => {
+      await startServer(argv.port)
     }
   )
   .demandCommand(1)
